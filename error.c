@@ -34,7 +34,7 @@ exit(EXIT_FAILURE);
 
 void line_error(int line_num, char *command)
 {
-fprintf(stderr, "L%d: unknown instruction \n", line_num, command);
+fprintf(stderr, "L%d: unknown instruction %s\n", line_num, command);
 exit(EXIT_FAILURE);
 }
 

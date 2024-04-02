@@ -101,11 +101,11 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 		}
 		node = create_node(atoi(val) * flag);
 		if (format == 0)
-			func(&node, ln);
+			(*func)(&node, ln);
 		if (format == 1)
 			add_node(&node, ln);
 	}
 	else
-		func(&head, ln);
+		(*func)(&head, ln);
 }
 

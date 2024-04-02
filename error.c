@@ -11,9 +11,7 @@ void check_monty(FILE *monty, char *file_name)
 if (monty == NULL || file_name == NULL)
 {
 char *message = "Error: Can't open file ";
-write(STDERR_FILENO, message, _strlen(message));
-write(STDERR_FILENO, file_name, _strlen(file_name));
-write(STDERR_FILENO, "\n", 1);
+fprintf(stderr, "Error: Can't open file %s", file_name);
 exit(EXIT_FAILURE);
 }
 }
@@ -38,13 +36,8 @@ exit(EXIT_FAILURE);
 
 void line_error(int line_num, char *command)
 {
-char *num = _itoa(line_num + 1);
-char *message = ": unknown instruction ";
-write(STDERR_FILENO, "L", 1);
-write(STDERR_FILENO, num, _strlen(num));
-write(STDERR_FILENO, message, _strlen(message));
-write(STDERR_FILENO, command, _strlen(command));
-write(STDERR_FILENO, "\n", 1);
+char *num = itoa(line_num);
+fprintf(stderr, "L%d: unknown instruction \n", num, command);
 exit(EXIT_FAILURE);
 }
 

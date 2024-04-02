@@ -46,6 +46,7 @@ stack_t *create_node(int n);
 void free_nodes(void);
 void add_node(stack_t **new_node, __attribute__((unused))unsigned int ln);
 void print(stack_t **stack, unsigned int line_number);
+int tokenize_line(char *buffer, int line_number, int format);
 
 /*file*/
 void read_file(FILE *file);
@@ -56,5 +57,11 @@ void malloc_error(void);
 void line_error(int line_num, char *command);
 void value_error(int line);
 
+/*execute*/
+void find_func(char *opcode, char *value, int ln, int format);
+void call_fun(op_func func, char *op, char *val, int ln, int format);
+
 
 #endif
+
+

@@ -92,7 +92,7 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 			flag = -1;
 		}
 		if (val == NULL)
-			err(5, ln);
+			value_error(ln);
 
 		for (i = 0; val[i] != '\0'; i++)
 		{

@@ -11,19 +11,17 @@ stack_t *head = NULL;
 
 int main(int argc, char *argv[])
 {
-    FILE *monty;
-
+    FILE *monty = fopen(argv[1], "r");
     if (argc != 2)
     {
         fprintf(stderr, "USAGE: monty file\n");
         exit(EXIT_FAILURE);
     }
 
-    fopen(argv[1], "r");
     check_monty(monty, argv[1]);
     read_file(monty); 
 
-
+    return (0);
 
 }
 
@@ -45,3 +43,4 @@ void read_file(FILE *file)
 	}
 	free(buffer);
 }
+

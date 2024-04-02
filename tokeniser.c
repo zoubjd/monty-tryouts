@@ -28,7 +28,7 @@ int tokenize_line(char *buffer, int line_number, int format)
 	if (strcmp(opcode, "queue") == 0)
 		return (1);
 
-	func(opcode, value, line_number, format);
+	find_func(opcode, value, line_number, format);
 	return (format);
 }
 

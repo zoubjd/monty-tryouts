@@ -10,7 +10,6 @@ void check_monty(FILE *monty, char *file_name)
 {
 if (monty == NULL || file_name == NULL)
 {
-char *message = "Error: Can't open file ";
 fprintf(stderr, "Error: Can't open file %s", file_name);
 exit(EXIT_FAILURE);
 }
@@ -23,8 +22,7 @@ exit(EXIT_FAILURE);
 
 void malloc_error(void)
 {
-char *message = "Error: malloc failed\n";
-write(STDERR_FILENO, message, _strlen(message));
+fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
 
@@ -36,8 +34,7 @@ exit(EXIT_FAILURE);
 
 void line_error(int line_num, char *command)
 {
-char *num = itoa(line_num);
-fprintf(stderr, "L%d: unknown instruction \n", num, command);
+fprintf(stderr, "L%d: unknown instruction \n", line_num, command);
 exit(EXIT_FAILURE);
 }
 
